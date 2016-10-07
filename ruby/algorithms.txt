@@ -1,0 +1,24 @@
+1. Elevator Robot 
+
+- Move forward until inside elevator 
+- Ask human which floor should I press 
+- Scan the numbers on elevator board
+-until number requested by human match number on elevator board
+   - if number requested by human matches number on board press the button with matching number 
+   - if number requested by human doesn’t match a number on the board say “this is an invalid input, which floor would you like to go to ?”
+- when doors open at required floor exit the elevator 
+
+2. Brushing my teeth 
+
+- Place toothbrush perpendicular to my teeth at the right corner of my teeth
+- Until all teeth are cleaned (brush reaches left corner of mouth)
+    - Start “stoke counter” at 0
+    - Until stroke counter = 5
+    - Move brush upward until upper gums are reached 
+    - Move downward until lower gums are reached 
+    - Add 1 to the stroke counter 
+    - After “stoke counter” reaches 5, move the brush 0.5 cm to along teeth to the left
+    - Repeat 
+
+ 
+       
