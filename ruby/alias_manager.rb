@@ -1,43 +1,37 @@
-def secret_name 
-puts "Hi, what's your name ?"
+def make_alias
+vowels_array = ["a", "e", "i", "o", "u"] 
+
+alphabet = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n","p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+
+puts "Hi, give me your full name"
 full_name = gets.chomp
-while full_name != "quit"
 
-#swaps name 
-name_array = full_name.split(' ')
-name_array
-name_array.class
-
-swap_name = []
-name_array.reverse_each do |name|
-	         swap_name << name
-    		end 
-    
-new_string = swap_name* " "
-
-#next letter 
-new_string.chars
-the_next_array = []
-new_string.chars.each do |letter|
-	if letter == "z" 
-		letter = "a"
-		the_next_array << letter
-		elsif letter == " "
-		letter = " "
-		the_next_array << letter
-	
-	else the_next_array << letter.next 
-      end 
-      end
-p the_next_array* " "	
-
-puts 
-
-puts "Give me another name"
-full_name = gets.chomp
+while full_name !="quit"
+name = full_name.chars
+new_name = []
+name.each do |letter|
+			if letter == "z"
+				new_name << "a"
+			elsif alphabet.include?(letter) == true
+				index = alphabet.index(letter)
+				new_letter = alphabet[index+1]
+				new_name << new_letter
+				
+			elsif vowels_array.include?(letter) == true
+				index = vowels_array.index(letter)
+				new_letter = vowels_array[index+1]
+				new_name << new_letter
+				
+			else new_name << " "
+			end
+		end 
+		str = new_name.join ""
+		p str.split.reverse.join" " 
+		puts
+	puts "Give me another name"
+	full_name = gets.chomp
+	end
 end
-end 
 
+make_alias
 
-
-secret_name 
