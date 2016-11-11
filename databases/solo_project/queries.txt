@@ -1,0 +1,52 @@
+1- DISPLAY INFO:
+sqlite> select * from movies;
+1|a walk in the dark|1985|true|1
+2|moons away|2013|true|2
+3|Happy guess|2012|false|2
+4|cats and dogs|1995|false|1
+5|Shah razad|1970|true|1
+6|Depth of the Sea|1980|true|3
+sqlite>
+
+2-UPDATE:
+sqlite> UPDATE movies SET year_of_release = 1988 where name = 'Depth of the Sea';
+sqlite> select * from movies
+   ...> ;
+1|a walk in the dark|1985|true|1
+2|moons away|2013|true|2
+3|Happy guess|2012|false|2
+4|cats and dogs|1995|false|1
+5|Shah razad|1970|true|1
+6|Depth of the Sea|1988|true|3
+sqlite>
+
+3-DISPLAY SIDE BY SIDE
+sqlite> SELECT * from movies, directors where movies.director_id = directors.id;
+1|a walk in the dark|1985|true|1|1|Salman Khan
+2|moons away|2013|true|2|2|Ahmad Jaber
+3|Happy guess|2012|false|2|2|Ahmad Jaber
+4|cats and dogs|1995|false|1|1|Salman Khan
+5|Shah razad|1970|true|1|1|Salman Khan
+6|Depth of the Sea|1988|true|3|3|Khalid Amin
+sqlite>
+
+4-DISPLAY A NARROWER SELECTION
+sqlite> SELECT movies.name, directors.name FROM movies JOIN directors on movies.director_id = directors.id;
+a walk in the dark|Salman Khan
+moons away|Ahmad Jaber
+Happy guess|Ahmad Jaber
+cats and dogs|Salman Khan
+Shah razad|Salman Khan
+Depth of the Sea|Khalid Amin
+sqlite>
+
+5- DELETE an item
+sqlite> delete from movies where ID=4;
+
+sqlite> select * from movies;
+1|a walk in the dark|1985|true|1
+2|moons away|2013|true|2
+3|Happy guess|2012|false|2
+5|Shah razad|1970|true|1
+6|Depth of the Sea|1988|true|3
+sqlite>
